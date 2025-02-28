@@ -5,7 +5,8 @@
   "scripts": {
     "clean": "rm -rf build/",
     "compile": "tsc --build",
-    "build": "tsc --noEmit && node build.mjs"
+    "build": "tsc --noEmit && node build.mjs",
+    "test:e2e": "./tests/ys/e2e/run_e2e_tests.sh"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.10",

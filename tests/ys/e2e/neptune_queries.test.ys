@@ -1,0 +1,46 @@
+#!/usr/bin/env ys-0
+
+# Import your queryblast module
+queryblast =: pods/load-pod('.esbuild/.build/src/queryblast.js')
+require queryblast: => qb
+
+# Test helper function
+defn assert(actual expected message):
+  if eq(actual expected):
+    say: |
+      ✓ $message
+    else:
+      say: |
+        ✗ $message
+        Expected: $expected
+        Got: $actual
+      exit: 1
+
+# Test cases
+defn test-basic-query():
+  result =:
+    qb/query!: "MATCH (n) RETURN n LIMIT 1"
+  assert: count(result) 1 "Should return exactly one node"
+
+defn test-two-sequential-queries():
+  resultOne =:
+    qb/query!: "MATCH (n) RETURN n LIMIT 1"
+  resultTwo =:
+    qb/query!: "MATCH (n) RETURN n LIMIT 2"
+  assert: count(resultTwo) 2 "Should correctly run two sequential queries"
+
+defn test-empty-result():
+  result =:
+    qb/query!: "MATCH (n:NonExistentLabel) RETURN n"
+  assert: count(result) 0 "Should return empty result for non-existent nodes"
+
+# Run tests
+defn run-tests():
+  test-basic-query()
+  test-two-sequential-queries()
+  test-empty-result()
+
+# Execute test suite
+defn main():
+    say: "Executing test suite..."
+    run-tests:
