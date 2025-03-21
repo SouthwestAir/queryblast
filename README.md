@@ -21,7 +21,7 @@ This project bridges the gap between Neptune and YAML-based scripting, allowing 
 
 ## ⚙️ Installation  
 
-### 1️⃣ Build `opencypher-pod.js`  
+### 1️⃣ Build `queryblast.js`  
 
 Ensure you have **Node.js** and **Yarn** installed.  
 
