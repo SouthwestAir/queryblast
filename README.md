@@ -11,7 +11,7 @@ This project enables making **OpenCypher** queries to **AWS Neptune** from [Baba
 
 ## 💡 Concept  
 
-`opencypher-yaml` provides a seamless way to execute OpenCypher queries against AWS Neptune using YAMLscript, making it easy to integrate graph queries into scripting workflows.
+`queryblast` provides a seamless way to execute OpenCypher queries against AWS Neptune using YAMLscript, making it easy to integrate graph queries into scripting workflows.
 
 ## 📜 Background  
 
