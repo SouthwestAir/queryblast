@@ -27,6 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: yarn install
+    - run: yarn build
     - run: yarn release
     - name: Upload artifact
       uses: actions/upload-artifact@v4
