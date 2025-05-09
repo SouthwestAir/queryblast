@@ -6,6 +6,7 @@
     "clean": "rm -rf build/",
     "compile": "tsc --build",
     "build": "tsc --noEmit && node build.mjs",
+    "release": "npx caxa --input .esbuild/.build/src --output queryblast  -- '{{caxa}}/node_modules/.bin/node' '{{caxa}}/queryblast.js'",
     "test:e2e": "./tests/ys/e2e/run_e2e_tests.sh"
   },
   "devDependencies": {
@@ -32,6 +33,7 @@
     "typescript": "^5.5.2"
   },
   "dependencies": {
+    "@appthreat/caxa": "^1.0.7",
     "@aws-sdk/client-neptunedata": "^3.658.0",
     "@aws-sdk/client-sso-oidc": "^3.658.1",
     "@aws-sdk/client-sts": "^3.658.0",
