@@ -4,7 +4,7 @@
 # NEPTUNE_ENDPOINT, NEPTUNE_PORT, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_SESSION_TOKEN are required.
 
 # Build the project
-yarn build
+bun build ./src/queryblast.ts
 
 # Run the tests
 echo "Running end-to-end tests..."
