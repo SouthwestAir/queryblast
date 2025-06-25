@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-import * as fs from "node:fs";
+import { appendFile } from "node:fs/promises";
 import * as os from "node:os";
 
 import bencodec, {BencodeDictionary, BencodeTypes} from 'bencodec';
@@ -16,8 +14,8 @@ const config: { endpoint: string } = {
 
 const client = new NeptunedataClient(config);
 
-const debug = (msg : string) : void => {
-    fs.appendFile("debug.log", `msg: ${msg}${os.EOL}`, () => {});
+const debug = async (msg : string) => {
+    await appendFile("debug.log", `debug: ${msg}${os.EOL}`);
 }
 
 const write = (obj : Object) => {
@@ -71,8 +69,8 @@ const queryblastPod = async () => {
 };
 
 export function main() : void {
-    debug("starting up");
-    queryblastPod().then(() => debug("Goodbye!"));
+    debug("Starting up");
+    queryblastPod().then(() => debug("Started up!"));
 }
 
 if (require.main === module) {
