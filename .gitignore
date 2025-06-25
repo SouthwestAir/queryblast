@@ -14,5 +14,5 @@ debug.log
 tsconfig.tsbuildinfo
 .pnp.loader.mjs
 .pnp.cjs
-
+.lsp
 
