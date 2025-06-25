@@ -25,8 +25,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ github.ref }}-alpha
-          release_name: Alpha release ${{ github.ref }}
+          tag_name: v${{ github.sha }}-alpha
+          release_name: Alpha release ${{ github.sha }}
           draft: false
           prerelease: true
       - name: Upload Alpha Release Asset
